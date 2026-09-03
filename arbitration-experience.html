@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbitration Experience — Tim Robbins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF; --paper:#FAFAF8; --ink:#0A0A1F; --ink-text:#EDEDF2; --ink-muted:#9695AE;
+    --charcoal:#17161C; --navy:#000073; --red:#8E0A00;
+    --line: rgba(10,10,20,0.13); --line-dark: rgba(255,255,255,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--white); color:var(--charcoal); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 56px; }
+
+  .masthead{ background:var(--ink); position:sticky; top:0; z-index:100; }
+  .masthead-inner{ max-width:1120px; margin:0 auto; padding:0 56px; }
+  .masthead-nav-row{
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:28px 0 26px;
+  }
+  .masthead-nav-row nav{
+    display:grid; grid-template-columns:repeat(5, 1fr); flex:1; gap:0; align-items:center;
+  }
+  .masthead-nav-row nav a{
+    font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-text); opacity:0.85;
+    text-align:center; padding:0 8px; line-height:1.4;
+  }
+  .masthead-nav-row nav a:hover{ opacity:1; color:#FFFFFF; }
+  .masthead-nav-row nav a.current{ opacity:1; color:#FFFFFF; border-bottom:1px solid var(--red); padding-bottom:4px; }
+  .masthead-nav-row .cv-btn{
+    flex-shrink:0; white-space:nowrap;
+    font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase;
+    border:1px solid rgba(255,255,255,0.38); color:var(--ink-text); padding:10px 20px;
+  }
+  .masthead-nav-row .cv-btn:hover{ background:var(--red); border-color:var(--red); color:#FFFFFF; }
+
+  .identity-band{ background:var(--white); border-bottom:1px solid var(--line); }
+  .identity-row{ display:flex; align-items:center; gap:30px; padding:40px 0 38px; }
+  .identity-row img.logo-mark{ height:74px; width:auto; display:block; flex-shrink:0; }
+  .identity-row .id-text .name{ font-family:'EB Garamond', serif; font-weight:600; font-size:clamp(38px, 5.4vw, 60px); color:var(--ink); letter-spacing:0.005em; line-height:1; }
+  .identity-row .id-text .role{ margin-top:14px; font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:var(--charcoal); opacity:0.62; }
+
+  .page-hero{ position:relative; height:340px; overflow:hidden; display:flex; align-items:flex-end; }
+  .page-hero img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(0.78) contrast(1.04); }
+  .page-hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,31,0.18) 0%, rgba(10,10,31,0.88) 100%); }
+  .page-hero .hero-inner{ position:relative; z-index:2; max-width:1120px; margin:0 auto; padding:0 56px 40px; width:100%; }
+  .page-hero h1{ font-family:'EB Garamond', serif; font-weight:500; font-size:clamp(34px, 4.6vw, 54px); color:#FFFFFF; line-height:1.08; }
+
+  .section{ padding:64px 0; border-bottom:1px solid var(--line); }
+  .section .head{ margin-bottom:36px; }
+  .section .head .kicker{ font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+  .section .head h2{ font-family:'EB Garamond', serif; font-weight:500; font-size:24px; color:var(--ink); }
+  .section .head .note{ margin-top:10px; font-size:13px; color:var(--charcoal); opacity:0.6; }
+
+  .role-row{ display:grid; grid-template-columns:150px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--line); }
+  .role-row:last-child{ border-bottom:1px solid var(--line); }
+  .role-row .dates{ font-family:'EB Garamond', serif; font-style:italic; color:var(--red); font-size:14px; padding-top:4px; }
+  .role-row .info .role{ font-family:'EB Garamond', serif; font-weight:500; font-size:19px; color:var(--ink); margin-bottom:5px; }
+  .role-row .info .org{ font-size:13.5px; color:var(--charcoal); opacity:0.75; }
+
+  .matter{ padding:26px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:36px 1fr; gap:18px; }
+  .matter:last-child{ border-bottom:1px solid var(--line); }
+  .matter .idx{ font-family:'EB Garamond', serif; font-style:italic; color:var(--red); font-size:14px; padding-top:2px; }
+  .matter p{ font-size:14.5px; line-height:1.75; color:var(--charcoal); opacity:0.85; max-width:760px; }
+
+  footer{ background:var(--paper); padding:72px 56px 44px; border-top:1px solid var(--line); }
+  .footer-grid{ max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid var(--line); }
+  .footer-grid h4{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal); opacity:0.55; margin-bottom:16px; }
+  .footer-grid .addr{ font-size:14px; line-height:1.8; color:var(--charcoal); opacity:0.88; }
+  .footer-grid a.email{ font-family:'EB Garamond', serif; font-size:19px; color:var(--navy); border-bottom:1px solid var(--navy); padding-bottom:2px; }
+  .footer-grid a.email:hover{ color:var(--red); border-color:var(--red); }
+  .footer-bottom{ max-width:1120px; margin:0 auto; padding-top:26px; display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--charcoal); opacity:0.6; }
+  .footer-bottom .brand-mark{ display:flex; align-items:center; gap:10px; opacity:1; }
+  .footer-bottom .brand-mark img{ height:20px; width:auto; }
+  .footer-bottom a:hover{ color:var(--red); }
+  .footer-bottom .links{ display:flex; gap:24px; align-items:center; }
+
+  @media (max-width: 860px){
+    .masthead-inner{ padding:0 22px; }
+    .masthead-nav-row nav{ display:none; }
+    .masthead-nav-row{ justify-content:flex-end; padding:16px 0; }
+    .masthead-nav-row .cv-btn{ margin-left:0; }
+    .identity-band .masthead-inner{ padding:0 22px; }
+    .identity-row{ padding:28px 0 26px; gap:16px; }
+    .identity-row img.logo-mark{ height:40px; }
+    .wrap{ padding:0 22px; }
+    .section{ padding:44px 0; }
+    .role-row{ grid-template-columns:1fr; gap:6px; }
+    footer{ padding:48px 22px 28px; }
+    .footer-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-nav-row">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education &amp; Qualifications</a>
+        <a href="arbitration-experience.html" class="current">Arbitration Experience</a>
+        <a href="academic-professional.html">Academic &amp; Professional Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="cv-btn" href="assets/tim-robbins-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</div>
+
+<div class="identity-band">
+  <div class="masthead-inner">
+    <div class="identity-row">
+      <img class="logo-mark" src="assets/logo.svg" alt="Robbins Arbitration mark">
+      <div class="id-text">
+        <div class="name">TIM ROBBINS</div>
+        <div class="role">Independent Arbitrator</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-hero">
+  <img src="assets/hero/singapore.jpg" alt="Singapore skyline">
+  <div class="hero-inner">
+    <h1>Arbitration Experience</h1>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section">
+    <div class="head">
+      <div class="kicker">Career</div>
+      <h2>Professional Experience</h2>
+    </div>
+    <div class="role-row">
+      <span class="dates">2021 – present</span>
+      <div class="info">
+        <div class="role">Independent Arbitrator</div>
+        <div class="org">Robbins Arbitration — The Hague / Hong Kong</div>
+      </div>
+    </div>
+    <div class="role-row">
+      <span class="dates">2017 – 2021</span>
+      <div class="info">
+        <div class="role">Chambers Director and Managing Counsel</div>
+        <div class="org">Arbitration Chambers — Hong Kong, London, New York</div>
+      </div>
+    </div>
+    <div class="role-row">
+      <span class="dates">2013 – 2017</span>
+      <div class="info">
+        <div class="role">Associate (International Arbitration)</div>
+        <div class="org">Norton Rose Fulbright — Singapore</div>
+      </div>
+    </div>
+    <div class="role-row">
+      <span class="dates">2011 – 2013</span>
+      <div class="info">
+        <div class="role">Deputy Counsel</div>
+        <div class="org">Secretariat of the ICC International Court of Arbitration — Hong Kong</div>
+      </div>
+    </div>
+    <div class="role-row">
+      <span class="dates">2007 – 2011</span>
+      <div class="info">
+        <div class="role">Associate / Trainee Solicitor</div>
+        <div class="org">Torys LLP — Toronto / New York</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="border-bottom:none;">
+    <div class="head">
+      <div class="kicker">Selected Matters</div>
+      <h2>Experience in Practice</h2>
+      <div class="note">Tim has acted as arbitrator in a broad range of international commercial arbitrations, including the following:</div>
+    </div>
+
+    <div class="matter"><span class="idx">—</span><p>Presiding Arbitrator in a SCC arbitration related to disputes arising from multiple purchase agreements for the supply of military products. The matter was seated in Stockholm, and the contracts governed by the laws of England &amp; Wales.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a LCIA arbitration relating to disputes arising from a services agreement relating to award enforcement. The matter was seated in London, and the contract governed by the laws of England &amp; Wales.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a HKIAC arbitration relating to disputes arising from a convertible promissory note and related note purchase agreement. The matter was seated in Hong Kong, and the contracts governed by the laws of Delaware.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a DIAC arbitration relating to disputes arising from a real estate sale and purchase agreement. The matter was seated in Dubai, and the contract governed by the laws of the U.A.E.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a HKIAC arbitration, relating to claims arising from a series of Post-IPO Equity Incentive Plan Agreements. The arbitration was seated in Hong Kong, and the agreements governed by the laws of the Cayman Islands.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a KCAB arbitration relating to claims under a trademark license agreement. The arbitration was seated in Seoul, and governed by the laws of the Republic of Korea.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a SIAC arbitration relating to a call on a guarantee arising from a debt under a settlement agreement. The arbitration was seated in Singapore, and governed by Singapore law.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a ICC arbitration, arising from claims under Heads of Terms related to a failed M&amp;A transaction. The arbitration was seated in London and the contract governed by the laws of England &amp; Wales.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a HKIAC arbitration relating to disputes arising from multiple convertible promissory notes. The matter was seated in Hong Kong, and the contracts governed by the laws of Delaware.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a SIAC arbitration arising from a dispute relating to a profit-sharing agreement for the sale and distribution of petrochemical products. The arbitration was seated in Singapore and the agreement governed by Singapore law.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a DIAC arbitration relating to the purchase and sale of industrial materials for a major construction projection. The arbitration was seated in the DIFC, UAE, and the contract governed by the laws of England &amp; Wales.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a HKIAC arbitration arising from a settlement agreement entered into relating to disputes arising out of a joint venture agreement for distribution of consumer products across China and Taiwan. The matter was seated in Hong Kong and the contract governed by the laws of Delaware.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a SIAC arbitration arising from a dispute relating to a consultancy services agreement for a major construction project in the Philippines. The arbitration was seated in Singapore.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a HKIAC arbitration relating to the sale and purchase of aircraft. The arbitration was seated in Hong Kong and the contract governed by the laws of Hong Kong.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a SIAC arbitration, relating to claims arising from the purchase and shipment of chemical products. The dispute involved parallel proceedings related to banking facilities and allegations of fraud. The arbitration was seated in Singapore and the contract governed by the laws of Singapore.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Co-arbitrator in a DIFC-LCIA arbitration, arising from a dispute relating to an expert opinion for a major construction project in Dubai. The arbitration was seated in the DIFC, and the dispute governed by the laws of U.A.E.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a SIAC arbitration, arising from a suite of sales and distribution agreements for digital health technology across Europe and the Middle East. The arbitration was seated in Singapore and the contracts governed by Singapore law.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a ICC arbitration, arising from a shipping dispute regarding the sale and purchase of goods. The arbitration was seated in Hong Kong, with the CISG and the Lex Mercatoria as the applicable laws.</p></div>
+    <div class="matter"><span class="idx">—</span><p>Sole Arbitrator in a MIAC (Maldives) arbitration relating to disputes arising out of an Investment Agreement. The arbitration was seated in the Maldives, and the dispute governed by the laws of the Maldives.</p></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Contact</h4>
+      <a class="email" href="mailto:tim@robbinsarbitration.com">tim@robbinsarbitration.com</a>
+    </div>
+    <div>
+      <h4>The Hague</h4>
+      <div class="addr">Jan Pieterszoon Coenstraat 7<br>The Hague, 2595 WP<br>The Netherlands<br>+31 6 2550 4785</div>
+    </div>
+    <div>
+      <h4>Hong Kong</h4>
+      <div class="addr">7/F, Low Block<br>Grand Millennium Plaza<br>181 Queen's Road Central<br>+852 5905 5668</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="brand-mark">
+      <img src="assets/logo.svg" alt="Robbins Arbitration mark">
+      <span>© 2026 Tim Robbins</span>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/tim-robbins-15881610/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

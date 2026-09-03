@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education & Qualifications — Tim Robbins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF; --paper:#FAFAF8; --ink:#0A0A1F; --ink-text:#EDEDF2; --ink-muted:#9695AE;
+    --charcoal:#17161C; --navy:#000073; --red:#8E0A00;
+    --line: rgba(10,10,20,0.13); --line-dark: rgba(255,255,255,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--white); color:var(--charcoal); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 56px; }
+
+  .masthead{ background:var(--ink); position:sticky; top:0; z-index:100; }
+  .masthead-inner{ max-width:1120px; margin:0 auto; padding:0 56px; }
+  .masthead-nav-row{
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:28px 0 26px;
+  }
+  .masthead-nav-row nav{
+    display:grid; grid-template-columns:repeat(5, 1fr); flex:1; gap:0; align-items:center;
+  }
+  .masthead-nav-row nav a{
+    font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-text); opacity:0.85;
+    text-align:center; padding:0 8px; line-height:1.4;
+  }
+  .masthead-nav-row nav a:hover{ opacity:1; color:#FFFFFF; }
+  .masthead-nav-row nav a.current{ opacity:1; color:#FFFFFF; border-bottom:1px solid var(--red); padding-bottom:4px; }
+  .masthead-nav-row .cv-btn{
+    flex-shrink:0; white-space:nowrap;
+    font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase;
+    border:1px solid rgba(255,255,255,0.38); color:var(--ink-text); padding:10px 20px;
+  }
+  .masthead-nav-row .cv-btn:hover{ background:var(--red); border-color:var(--red); color:#FFFFFF; }
+
+  .identity-band{ background:var(--white); border-bottom:1px solid var(--line); }
+  .identity-row{ display:flex; align-items:center; gap:30px; padding:40px 0 38px; }
+  .identity-row img.logo-mark{ height:74px; width:auto; display:block; flex-shrink:0; }
+  .identity-row .id-text .name{ font-family:'EB Garamond', serif; font-weight:600; font-size:clamp(38px, 5.4vw, 60px); color:var(--ink); letter-spacing:0.005em; line-height:1; }
+  .identity-row .id-text .role{ margin-top:14px; font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:var(--charcoal); opacity:0.62; }
+
+  .page-hero{ position:relative; height:340px; overflow:hidden; display:flex; align-items:flex-end; }
+  .page-hero img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(0.78) contrast(1.04); }
+  .page-hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,31,0.18) 0%, rgba(10,10,31,0.88) 100%); }
+  .page-hero .hero-inner{ position:relative; z-index:2; max-width:1120px; margin:0 auto; padding:0 56px 40px; width:100%; }
+  .page-hero h1{ font-family:'EB Garamond', serif; font-weight:500; font-size:clamp(34px, 4.6vw, 54px); color:#FFFFFF; line-height:1.08; }
+
+  .section{ padding:64px 0; border-bottom:1px solid var(--line); }
+  .section .head{ margin-bottom:36px; }
+  .section .head .kicker{ font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+  .section .head h2{ font-family:'EB Garamond', serif; font-weight:500; font-size:24px; color:var(--ink); }
+
+  .degree-row{ display:grid; grid-template-columns:110px 1fr; gap:28px; padding:24px 0; border-top:1px solid var(--line); }
+  .degree-row:last-child{ border-bottom:1px solid var(--line); }
+  .degree-row .year{ font-family:'EB Garamond', serif; font-style:italic; color:var(--red); font-size:15px; padding-top:3px; }
+  .degree-row .info .degree{ font-family:'EB Garamond', serif; font-weight:500; font-size:19px; color:var(--ink); margin-bottom:5px; }
+  .degree-row .info .inst{ font-size:13.5px; color:var(--charcoal); opacity:0.72; }
+
+  .spec-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:44px; }
+  .spec-col .kicker{ font-family:'EB Garamond', serif; font-weight:500; font-size:24px; color:var(--white); margin-bottom:16px; }
+  .spec-col ul{ list-style:none; }
+  .spec-col li{ font-family:'EB Garamond', serif; font-size:18px; color:var(--white); padding:11px 0; border-top:1px solid var(--line-dark); }
+  .spec-col li:last-child{ border-bottom:1px solid var(--line-dark); }
+
+  .dark-band{ background:var(--ink); color:var(--ink-text); padding:72px 0; }
+  .dark-band .wrap{ max-width:1120px; }
+  .panel-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 60px; }
+  .panel-grid .item{ font-family:'EB Garamond', serif; font-size:16px; color:var(--ink); padding:14px 0; border-top:1px solid var(--line); }
+  .panel-grid .item:nth-child(4), .panel-grid .item:last-child{ border-bottom:1px solid var(--line); }
+
+  footer{ background:var(--paper); padding:72px 56px 44px; border-top:1px solid var(--line); }
+  .footer-grid{ max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid var(--line); }
+  .footer-grid h4{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal); opacity:0.55; margin-bottom:16px; }
+  .footer-grid .addr{ font-size:14px; line-height:1.8; color:var(--charcoal); opacity:0.88; }
+  .footer-grid a.email{ font-family:'EB Garamond', serif; font-size:19px; color:var(--navy); border-bottom:1px solid var(--navy); padding-bottom:2px; }
+  .footer-grid a.email:hover{ color:var(--red); border-color:var(--red); }
+  .footer-bottom{ max-width:1120px; margin:0 auto; padding-top:26px; display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--charcoal); opacity:0.6; }
+  .footer-bottom .brand-mark{ display:flex; align-items:center; gap:10px; opacity:1; }
+  .footer-bottom .brand-mark img{ height:20px; width:auto; }
+  .footer-bottom a:hover{ color:var(--red); }
+  .footer-bottom .links{ display:flex; gap:24px; align-items:center; }
+
+  @media (max-width: 860px){
+    .masthead-inner{ padding:0 22px; }
+    .masthead-nav-row nav{ display:none; }
+    .masthead-nav-row{ justify-content:flex-end; padding:16px 0; }
+    .masthead-nav-row .cv-btn{ margin-left:0; }
+    .identity-band .masthead-inner{ padding:0 22px; }
+    .identity-row{ padding:28px 0 26px; gap:16px; }
+    .identity-row img.logo-mark{ height:40px; }
+    .wrap{ padding:0 22px; }
+    .section{ padding:44px 0; }
+    .spec-grid{ grid-template-columns:1fr; gap:28px; }
+    .panel-grid{ grid-template-columns:1fr; }
+    .panel-grid .item:nth-child(4){ border-bottom:none; }
+    footer{ padding:48px 22px 28px; }
+    .footer-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-nav-row">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="education.html" class="current">Education &amp; Qualifications</a>
+        <a href="arbitration-experience.html">Arbitration Experience</a>
+        <a href="academic-professional.html">Academic &amp; Professional Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="cv-btn" href="assets/tim-robbins-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</div>
+
+<div class="identity-band">
+  <div class="masthead-inner">
+    <div class="identity-row">
+      <img class="logo-mark" src="assets/logo.svg" alt="Robbins Arbitration mark">
+      <div class="id-text">
+        <div class="name">TIM ROBBINS</div>
+        <div class="role">Independent Arbitrator</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-hero">
+  <img src="assets/hero/new-york.jpg" alt="New York skyline">
+  <div class="hero-inner">
+    <h1>Education &amp; Qualifications</h1>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section">
+    <div class="head">
+      <h2>Degrees</h2>
+    </div>
+    <div class="degree-row">
+      <span class="year">2008</span>
+      <div class="info">
+        <div class="degree">J.D.</div>
+        <div class="inst">Queen's University, Ontario, Canada</div>
+      </div>
+    </div>
+    <div class="degree-row">
+      <span class="year">2006</span>
+      <div class="info">
+        <div class="degree">Certificate in International Business Law</div>
+        <div class="inst">Queen's University International Study Centre</div>
+      </div>
+    </div>
+    <div class="degree-row">
+      <span class="year">2004</span>
+      <div class="info">
+        <div class="degree">B.A. Fine Arts</div>
+        <div class="inst">University of Calgary, Alberta, Canada</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dark-band">
+  <div class="wrap">
+    <div class="spec-grid">
+      <div class="spec-col">
+        <div class="kicker">Admitted</div>
+        <ul>
+          <li>New York, U.S.A. (2009)</li>
+          <li>England &amp; Wales (2022)</li>
+          <li>Ontario, Canada (2009)</li>
+        </ul>
+      </div>
+      <div class="spec-col">
+        <div class="kicker">Nationalities</div>
+        <ul>
+          <li>Canada</li>
+          <li>Australia</li>
+        </ul>
+      </div>
+      <div class="spec-col">
+        <div class="kicker">Languages</div>
+        <ul>
+          <li>English (native)</li>
+          <li>French (fluent)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section" style="border-bottom:none;">
+    <div class="head">
+      <h2>Panel Appointments</h2>
+    </div>
+    <div class="panel-grid">
+      <div class="item">AIAC Panel of Arbitrators</div>
+      <div class="item">BVI IAC Panel of Arbitrators</div>
+      <div class="item">HKIAC List of Arbitrators</div>
+      <div class="item">KCAB Panel of Arbitrators</div>
+      <div class="item">MIAC Primary Panel of Arbitrators</div>
+      <div class="item">SCCA Panel of Arbitrators</div>
+      <div class="item">SIAC Panel of Arbitrators</div>
+      <div class="item">DIAC List of Arbitrators</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Contact</h4>
+      <a class="email" href="mailto:tim@robbinsarbitration.com">tim@robbinsarbitration.com</a>
+    </div>
+    <div>
+      <h4>The Hague</h4>
+      <div class="addr">Jan Pieterszoon Coenstraat 7<br>The Hague, 2595 WP<br>The Netherlands<br>+31 6 2550 4785</div>
+    </div>
+    <div>
+      <h4>Hong Kong</h4>
+      <div class="addr">7/F, Low Block<br>Grand Millennium Plaza<br>181 Queen's Road Central<br>+852 5905 5668</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="brand-mark">
+      <img src="assets/logo.svg" alt="Robbins Arbitration mark">
+      <span>© 2026 Tim Robbins</span>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/tim-robbins-15881610/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

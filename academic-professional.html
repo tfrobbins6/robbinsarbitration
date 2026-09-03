@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic & Professional Activities — Tim Robbins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF; --paper:#FAFAF8; --ink:#0A0A1F; --ink-text:#EDEDF2; --ink-muted:#9695AE;
+    --charcoal:#17161C; --navy:#000073; --red:#8E0A00;
+    --line: rgba(10,10,20,0.13); --line-dark: rgba(255,255,255,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--white); color:var(--charcoal); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 56px; }
+
+  .masthead{ background:var(--ink); position:sticky; top:0; z-index:100; }
+  .masthead-inner{ max-width:1120px; margin:0 auto; padding:0 56px; }
+  .masthead-nav-row{
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:28px 0 26px;
+  }
+  .masthead-nav-row nav{
+    display:grid; grid-template-columns:repeat(5, 1fr); flex:1; gap:0; align-items:center;
+  }
+  .masthead-nav-row nav a{
+    font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-text); opacity:0.85;
+    text-align:center; padding:0 8px; line-height:1.4;
+  }
+  .masthead-nav-row nav a:hover{ opacity:1; color:#FFFFFF; }
+  .masthead-nav-row nav a.current{ opacity:1; color:#FFFFFF; border-bottom:1px solid var(--red); padding-bottom:4px; }
+  .masthead-nav-row .cv-btn{
+    flex-shrink:0; white-space:nowrap;
+    font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase;
+    border:1px solid rgba(255,255,255,0.38); color:var(--ink-text); padding:10px 20px;
+  }
+  .masthead-nav-row .cv-btn:hover{ background:var(--red); border-color:var(--red); color:#FFFFFF; }
+
+  .identity-band{ background:var(--white); border-bottom:1px solid var(--line); }
+  .identity-row{ display:flex; align-items:center; gap:30px; padding:40px 0 38px; }
+  .identity-row img.logo-mark{ height:74px; width:auto; display:block; flex-shrink:0; }
+  .identity-row .id-text .name{ font-family:'EB Garamond', serif; font-weight:600; font-size:clamp(38px, 5.4vw, 60px); color:var(--ink); letter-spacing:0.005em; line-height:1; }
+  .identity-row .id-text .role{ margin-top:14px; font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:var(--charcoal); opacity:0.62; }
+
+  .page-hero{ position:relative; height:340px; overflow:hidden; display:flex; align-items:flex-end; }
+  .page-hero img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(0.78) contrast(1.04); }
+  .page-hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,31,0.18) 0%, rgba(10,10,31,0.88) 100%); }
+  .page-hero .hero-inner{ position:relative; z-index:2; max-width:1120px; margin:0 auto; padding:0 56px 40px; width:100%; }
+  .page-hero h1{ font-family:'EB Garamond', serif; font-weight:500; font-size:clamp(34px, 4.6vw, 54px); color:#FFFFFF; line-height:1.08; }
+
+  html{ scroll-behavior:smooth; }
+
+  .toc-band{ padding:56px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:1fr 260px; gap:60px; align-items:center; }
+  .toc-band .photo-frame{ overflow:hidden; }
+  .toc-band .photo-frame img{ width:100%; height:auto; display:block; filter:saturate(0.92) contrast(1.02); }
+  .toc-band .toc-list a{
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:'EB Garamond', serif; font-size:29px; color:var(--ink);
+    padding:22px 0; border-top:1px solid var(--line);
+  }
+  .toc-band .toc-list a:last-child{ border-bottom:1px solid var(--line); }
+  .toc-band .toc-list a:hover{ color:var(--red); }
+  .toc-band .toc-list a .arrow{ font-size:16px; color:var(--red); opacity:0.7; }
+
+  .section{ padding:64px 0; border-bottom:1px solid var(--line); overflow:hidden; }
+  #writing, #memberships, #speaking, #teaching{ scroll-margin-top:68px; }
+  .section.dark{ background:var(--ink); color:var(--ink-text); border-bottom:none; }
+  .section.dark .wrap{ max-width:1120px; }
+  .section .head{ margin-bottom:36px; }
+  .section .head .kicker{ font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+  .section .head h2{ font-family:'EB Garamond', serif; font-weight:500; font-size:24px; color:var(--ink); }
+  .section.dark .head h2{ color:var(--white); }
+
+  .activity-item{ padding:18px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:1fr auto; gap:24px; align-items:baseline; }
+  .activity-item:last-child{ border-bottom:1px solid var(--line); }
+  .activity-item .title{ font-family:'EB Garamond', serif; font-style:italic; font-size:16px; color:var(--ink); line-height:1.5; }
+  .activity-item .meta{ font-size:12px; color:var(--charcoal); opacity:0.62; white-space:nowrap; }
+
+  .section.dark .activity-item{ border-top:1px solid var(--line-dark); }
+  .section.dark .activity-item:last-child{ border-bottom:1px solid var(--line-dark); }
+  .section.dark .activity-item .title{ color:var(--white); }
+  .section.dark .activity-item .meta{ color:var(--ink-muted); opacity:1; }
+
+  .back-to-top{
+    display:inline-flex; align-items:center; gap:8px; margin-top:28px;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--navy);
+  }
+  .back-to-top:hover{ color:var(--red); }
+  .section.dark .back-to-top{ color:var(--ink-text); opacity:0.75; }
+  .section.dark .back-to-top:hover{ opacity:1; color:#FFFFFF; }
+
+  .member-list{ list-style:none; }
+  .member-item{ font-family:'EB Garamond', serif; font-size:17px; color:var(--ink); padding:14px 0; border-top:1px solid var(--line); }
+  .member-item:last-child{ border-bottom:1px solid var(--line); }
+  .section.dark .member-item{ color:var(--white); border-top:1px solid var(--line-dark); }
+  .section.dark .member-item:last-child{ border-bottom:1px solid var(--line-dark); }
+
+  footer{ background:var(--paper); padding:72px 56px 44px; border-top:1px solid var(--line); }
+  .footer-grid{ max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; padding-bottom:44px; border-bottom:1px solid var(--line); }
+  .footer-grid h4{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal); opacity:0.55; margin-bottom:16px; }
+  .footer-grid .addr{ font-size:14px; line-height:1.8; color:var(--charcoal); opacity:0.88; }
+  .footer-grid a.email{ font-family:'EB Garamond', serif; font-size:19px; color:var(--navy); border-bottom:1px solid var(--navy); padding-bottom:2px; }
+  .footer-grid a.email:hover{ color:var(--red); border-color:var(--red); }
+  .footer-bottom{ max-width:1120px; margin:0 auto; padding-top:26px; display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--charcoal); opacity:0.6; }
+  .footer-bottom .brand-mark{ display:flex; align-items:center; gap:10px; opacity:1; }
+  .footer-bottom .brand-mark img{ height:20px; width:auto; }
+  .footer-bottom a:hover{ color:var(--red); }
+  .footer-bottom .links{ display:flex; gap:24px; align-items:center; }
+
+  @media (max-width: 860px){
+    .masthead-inner{ padding:0 22px; }
+    .masthead-nav-row nav{ display:none; }
+    .masthead-nav-row{ justify-content:flex-end; padding:16px 0; }
+    .masthead-nav-row .cv-btn{ margin-left:0; }
+    .identity-band .masthead-inner{ padding:0 22px; }
+    .identity-row{ padding:28px 0 26px; gap:16px; }
+    .identity-row img.logo-mark{ height:40px; }
+    .wrap{ padding:0 22px; }
+    .page-hero{ height:220px; }
+    .toc-band{ grid-template-columns:1fr; padding:36px 0; gap:24px; }
+    .section{ padding:44px 0; }
+    .activity-item{ grid-template-columns:1fr; gap:4px; }
+    footer{ padding:48px 22px 28px; }
+    .footer-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body id="top">
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-nav-row">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education &amp; Qualifications</a>
+        <a href="arbitration-experience.html">Arbitration Experience</a>
+        <a href="academic-professional.html" class="current">Academic &amp; Professional Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="cv-btn" href="assets/tim-robbins-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</div>
+
+<div class="identity-band">
+  <div class="masthead-inner">
+    <div class="identity-row">
+      <img class="logo-mark" src="assets/logo.svg" alt="Robbins Arbitration mark">
+      <div class="id-text">
+        <div class="name">TIM ROBBINS</div>
+        <div class="role">Independent Arbitrator</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-hero">
+  <img src="assets/hero/the-hague.jpg" alt="The Hague">
+  <div class="hero-inner">
+    <h1>Academic &amp; Professional Activities</h1>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toc-band">
+    <div class="toc-list">
+      <a href="#writing">Writing <span class="arrow">↓</span></a>
+      <a href="#memberships">Professional Memberships <span class="arrow">↓</span></a>
+      <a href="#speaking">Speaking Engagements <span class="arrow">↓</span></a>
+      <a href="#teaching">Teaching Engagements <span class="arrow">↓</span></a>
+    </div>
+    <div class="photo-frame">
+      <img src="assets/tim-speaking.jpg" alt="Tim Robbins speaking at a conference">
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section" id="writing">
+    <div class="head">
+      <h2>Writing</h2>
+    </div>
+    <div class="activity-item"><span class="title">The Efficiency Enigma – a survey of efficiency tools in arbitration, with Grant Hanessian</span><span class="meta">XXVII ICCA Congress Madrid 2026 (publication pending)</span></div>
+    <div class="activity-item"><span class="title">Mid-Stream Tribunal Engagement – an abuse of process or a much needed panacea?, with Juliet Blanch</span><span class="meta">Festschrift in Honor of John Fellas, 2025</span></div>
+    <div class="activity-item"><span class="title">Hourly Rates and the Risk of Arbitrator Fraud or Negligence</span><span class="meta">ICC Institute of World Business Law Newsletter, December 2025</span></div>
+    <div class="activity-item"><span class="title">The Award in International Investment Arbitration: Compensation, with Dr. Prof. Kaj Hobér</span><span class="meta">Oxford University Press, 2024</span></div>
+    <div class="activity-item"><span class="title">The Efficiency Apex: Reversing the Procedural Presumption</span><span class="meta">Indian Journal of Arbitration Law, 2023</span></div>
+    <div class="activity-item"><span class="title">Digital Hearings – Civil Procedure and Arbitration: The Arbitrators' Perspective</span><span class="meta">Norstedts Juridik, 2022</span></div>
+    <div class="activity-item"><span class="title">The Case for Asian Digital Dispute Resolution Rules</span><span class="meta">Asian Disputes Review, 2022</span></div>
+    <a class="back-to-top" href="#top">↑ Back to top</a>
+  </div>
+</div>
+
+<div class="section dark" id="memberships">
+  <div class="wrap">
+    <div class="head">
+      <h2>Professional Memberships</h2>
+    </div>
+    <ul class="member-list">
+      <li class="member-item">Open Arbitration, Co-Founder</li>
+      <li class="member-item">Stockholm International Hearing Centre, Board Member</li>
+      <li class="member-item">IBA Arbitration Committee Task Force on the "Revision of the 2016 Report on the Reception of the IBA Arbitration Soft Law Products"</li>
+      <li class="member-item">LCIA Users Council</li>
+      <li class="member-item">ICC Canada Arbitration Committee</li>
+      <li class="member-item">ICC Australia Arbitration Committee</li>
+    </ul>
+    <a class="back-to-top" href="#top">↑ Back to top</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section" id="speaking">
+    <div class="head">
+      <h2>Speaking Engagements</h2>
+    </div>
+    <div class="activity-item"><span class="title">Reviving Efficiency in Arbitration</span><span class="meta">XXVII ICCA Congress, Madrid 2026</span></div>
+    <div class="activity-item"><span class="title">To Med-Arb or Not to Med-Arb? Leveraging Opportunities and Navigating Procedural Pitfalls</span><span class="meta">MAA Generations in Arbitration Conference, Hong Kong 2026</span></div>
+    <div class="activity-item"><span class="title">Meeting of Different Minds: How Diversity of Tribunals Shape Proceedings</span><span class="meta">Dutch Arbitration Day, Amsterdam 2025</span></div>
+    <div class="activity-item"><span class="title">Investor State Arbitration – Interactive Panel</span><span class="meta">ICC Canada Conference, Vancouver 2024</span></div>
+    <div class="activity-item"><span class="title">The Role of the Hong Kong Courts in Arbitration</span><span class="meta">ICC Australia, Online 2024</span></div>
+    <div class="activity-item"><span class="title">Decision Time Panel Discussion</span><span class="meta">GAR Live, Hong Kong 2023</span></div>
+    <div class="activity-item"><span class="title">Norton Rose Fulbright Debate</span><span class="meta">Hong Kong 2023</span></div>
+    <div class="activity-item"><span class="title">Are Stay and Bifurcation Requests Guerilla Tactics</span><span class="meta">MAA Generations in Arbitration, Vienna 2023</span></div>
+    <div class="activity-item"><span class="title">Validity of the Arbitration Agreement: Benefits and Disadvantages of Contracting with SOEs</span><span class="meta">HKIAC, Hong Kong 2023</span></div>
+    <div class="activity-item"><span class="title">Navigating International Commercial Disputes in a Sustainable World – ESG Meets ADR</span><span class="meta">Withers Worldwide, Singapore 2022</span></div>
+    <div class="activity-item"><span class="title">Law Governing the Arbitration Agreement</span><span class="meta">Generations in Arbitration Conference, Hong Kong 2022</span></div>
+    <div class="activity-item"><span class="title">Career Development and disclosure obligations in the age of digital social media</span><span class="meta">HK45, Hong Kong 2021</span></div>
+    <div class="activity-item"><span class="title">ICC in a World of Covid</span><span class="meta">ICC Australia, Sydney 2020</span></div>
+    <div class="activity-item"><span class="title">Tour d'Horizon</span><span class="meta">ICC Canada, Toronto 2020</span></div>
+    <div class="activity-item"><span class="title">Insights into ICC Australia</span><span class="meta">ICC Australia, Brisbane 2019</span></div>
+    <a class="back-to-top" href="#top">↑ Back to top</a>
+  </div>
+</div>
+
+<div class="section dark" id="teaching">
+  <div class="wrap">
+    <div class="head">
+      <h2>Teaching Engagements</h2>
+    </div>
+    <div class="activity-item"><span class="title">Guest Lecturer, LLM program</span><span class="meta">Erasmus University, Rotterdam 2023–2025</span></div>
+    <div class="activity-item"><span class="title">Guest Lecturer, LLM program</span><span class="meta">Leiden University, The Hague 2023, 2025</span></div>
+    <div class="activity-item"><span class="title">Lecturer and Tutor, LLM program</span><span class="meta">Hong Kong University, Hong Kong 2021–2022</span></div>
+    <div class="activity-item"><span class="title">Instructor, HKIAC Tribunal Secretary Training Program</span><span class="meta">Hong Kong 2021–2022</span></div>
+    <div class="activity-item"><span class="title">Instructor, SIAC Tribunal Secretary Training Program</span><span class="meta">Singapore 2022</span></div>
+    <div class="activity-item"><span class="title">Instructor, BVI IAC Tribunal Secretary Training Program</span><span class="meta">BVI 2022</span></div>
+    <a class="back-to-top" href="#top">↑ Back to top</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Contact</h4>
+      <a class="email" href="mailto:tim@robbinsarbitration.com">tim@robbinsarbitration.com</a>
+    </div>
+    <div>
+      <h4>The Hague</h4>
+      <div class="addr">Jan Pieterszoon Coenstraat 7<br>The Hague, 2595 WP<br>The Netherlands<br>+31 6 2550 4785</div>
+    </div>
+    <div>
+      <h4>Hong Kong</h4>
+      <div class="addr">7/F, Low Block<br>Grand Millennium Plaza<br>181 Queen's Road Central<br>+852 5905 5668</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="brand-mark">
+      <img src="assets/logo.svg" alt="Robbins Arbitration mark">
+      <span>© 2026 Tim Robbins</span>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/tim-robbins-15881610/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

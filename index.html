@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tim Robbins — Independent Arbitrator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --paper:#FAFAF8;
+    --ink:#0A0A1F;
+    --ink-text:#EDEDF2;
+    --ink-muted:#9695AE;
+    --charcoal:#17161C;
+    --navy:#000073;
+    --red:#8E0A00;
+    --line: rgba(10,10,20,0.13);
+    --line-dark: rgba(255,255,255,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--white);
+    color:var(--charcoal);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 56px; }
+
+  /* ---- Masthead: bold dark nav banner, with a light identity band beneath ---- */
+  .masthead{ background:var(--ink); position:sticky; top:0; z-index:100; }
+  .masthead-inner{ max-width:1120px; margin:0 auto; padding:0 56px; }
+
+  .masthead-nav-row{
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:28px 0 26px;
+  }
+  .masthead-nav-row nav{
+    display:grid; grid-template-columns:repeat(5, 1fr); flex:1; gap:0; align-items:center;
+  }
+  .masthead-nav-row nav a{
+    font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-text); opacity:0.85;
+    text-align:center; padding:0 8px; line-height:1.4;
+  }
+  .masthead-nav-row nav a:hover{ opacity:1; color:#FFFFFF; }
+  .masthead-nav-row nav a.current{ opacity:1; color:#FFFFFF; border-bottom:1px solid var(--red); padding-bottom:4px; }
+  .masthead-nav-row .cv-btn{
+    flex-shrink:0; white-space:nowrap;
+    font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase;
+    border:1px solid rgba(255,255,255,0.38); color:var(--ink-text); padding:10px 20px;
+  }
+  .masthead-nav-row .cv-btn:hover{ background:var(--red); border-color:var(--red); color:#FFFFFF; }
+
+  .identity-hero{ background:var(--white); }
+  .identity-hero-grid{
+    display:grid; grid-template-columns:1fr 300px; gap:64px; align-items:center;
+    padding:48px 0 64px;
+  }
+  .identity-row{ display:flex; align-items:center; gap:30px; }
+  .identity-row img.logo-mark{ height:74px; width:auto; display:block; flex-shrink:0; }
+  .identity-row .id-text .name{
+    font-family:'EB Garamond', serif; font-weight:600; font-size:clamp(38px, 5.4vw, 60px);
+    color:var(--ink); letter-spacing:0.005em; line-height:1;
+  }
+  .identity-row .id-text .role{
+    margin-top:14px; font-size:13px; letter-spacing:0.22em; text-transform:uppercase; color:var(--charcoal); opacity:0.62;
+  }
+  .portrait{ width:100%; }
+  .portrait img{ width:100%; height:auto; display:block; }
+
+  /* ---- Hero: typography-led, no image ---- */
+  .hero{ padding:56px 0 0; }
+  .hero .eyebrow{
+    font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:var(--red);
+    margin-bottom:26px; display:flex; align-items:center; gap:12px;
+  }
+  .hero .eyebrow .rule{ width:34px; height:1px; background:var(--red); }
+  .hero h1{
+    font-family:'EB Garamond', serif; font-weight:500;
+    font-size:clamp(30px, 3vw, 38px); line-height:1.24; letter-spacing:-0.005em;
+    color:var(--ink); max-width:1000px;
+  }
+  .hero .sub{
+    margin-top:26px; font-size:17px; line-height:1.75; color:var(--charcoal); opacity:0.78;
+    max-width:600px;
+  }
+
+  /* ---- Photo band: single, deliberate photographic moment ---- */
+  .photo-band{ position:relative; height:340px; width:100%; overflow:hidden; }
+  .photo-band img{ width:100%; height:100%; object-fit:cover; filter:saturate(0.82) contrast(1.03); }
+
+  /* ---- Stat band: dark, for balance ---- */
+  .stat-band{ background:var(--ink); color:var(--ink-text); padding:64px 0; }
+  .stat-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr);
+    max-width:1120px; margin:0 auto; padding:0 56px;
+  }
+  .stat{ padding:0 30px; border-left:1px solid var(--line-dark); }
+  .stat:first-child{ border-left:none; padding-left:0; }
+  .stat .num{ font-family:'EB Garamond', serif; font-weight:500; font-size:48px; color:var(--white); line-height:1; }
+  .stat .lbl{ margin-top:12px; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-muted); }
+
+  /* ---- Bio: the CV's own opening description, in full ---- */
+  .bio{ padding:88px 0; border-top:1px solid var(--line); }
+  .bio p{
+    font-family:'EB Garamond', serif; font-size:20px; line-height:1.72; color:var(--charcoal);
+    max-width:100%; margin-bottom:24px;
+  }
+  .bio p:last-child{ margin-bottom:0; }
+
+  /* ---- Footer: light, holds the logo correctly ---- */
+  footer{ background:var(--paper); padding:72px 56px 44px; border-top:1px solid var(--line); }
+  .footer-grid{
+    max-width:1120px; margin:0 auto;
+    display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px;
+    padding-bottom:44px; border-bottom:1px solid var(--line);
+  }
+  .footer-grid h4{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--charcoal); opacity:0.55; margin-bottom:16px; }
+  .footer-grid .addr{ font-size:14px; line-height:1.8; color:var(--charcoal); opacity:0.88; }
+  .footer-grid a.email{ font-family:'EB Garamond', serif; font-size:19px; color:var(--navy); border-bottom:1px solid var(--navy); padding-bottom:2px; }
+  .footer-grid a.email:hover{ color:var(--red); border-color:var(--red); }
+  .footer-bottom{
+    max-width:1120px; margin:0 auto; padding-top:26px;
+    display:flex; align-items:center; justify-content:space-between;
+    font-size:12px; color:var(--charcoal); opacity:0.6;
+  }
+  .footer-bottom .brand-mark{ display:flex; align-items:center; gap:10px; opacity:1; }
+  .footer-bottom .brand-mark img{ height:20px; width:auto; }
+  .footer-bottom a:hover{ color:var(--red); }
+  .footer-bottom .links{ display:flex; gap:24px; align-items:center; }
+
+  @media (max-width: 860px){
+    .masthead-inner{ padding:0 22px; }
+    .masthead-nav-row nav{ display:none; }
+    .masthead-nav-row{ justify-content:flex-end; padding:16px 0; }
+    .masthead-nav-row .cv-btn{ margin-left:0; }
+    .identity-hero-grid{ grid-template-columns:1fr; gap:32px; padding:32px 0 40px; }
+    .portrait{ max-width:220px; order:-1; }
+    .identity-row{ gap:16px; }
+    .identity-row img.logo-mark{ height:40px; }
+    .wrap{ padding:0 22px; }
+    .hero{ padding:40px 0 0; }
+    .stat-grid{ grid-template-columns:1fr; gap:24px; padding:0 22px; }
+    .stat{ border-left:none; padding-left:0; }
+    .footer-grid{ grid-template-columns:1fr; }
+    footer{ padding:48px 22px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-nav-row">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education &amp; Qualifications</a>
+        <a href="arbitration-experience.html">Arbitration Experience</a>
+        <a href="academic-professional.html">Academic &amp; Professional Activities</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="cv-btn" href="assets/tim-robbins-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</div>
+
+<div class="identity-hero">
+  <div class="masthead-inner">
+    <div class="identity-hero-grid">
+      <div class="text-col">
+        <div class="identity-row">
+          <img class="logo-mark" src="assets/logo.svg" alt="Robbins Arbitration mark">
+          <div class="id-text">
+            <div class="name">TIM ROBBINS</div>
+            <div class="role">Independent Arbitrator</div>
+          </div>
+        </div>
+        <div class="hero">
+          <h1>A next generation international arbitrator.</h1>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="assets/tim-portrait-bw.jpg" alt="Portrait of Tim Robbins">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="photo-band">
+  <img src="assets/dual-skyline.jpg" alt="City skyline">
+</div>
+
+<div class="stat-band">
+  <div class="stat-grid">
+    <div class="stat"><div class="num">20 years</div><div class="lbl">Commercial dispute resolution</div></div>
+    <div class="stat"><div class="num">90+</div><div class="lbl">International arbitrations</div></div>
+    <div class="stat"><div class="num">10</div><div class="lbl">Leading arbitral institutions</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="bio">
+    <p>Tim Robbins is an independent arbitrator with nearly twenty years of experience in commercial and investor-state disputes, and has acted as arbitrator, tribunal secretary or counsel in over ninety international arbitrations. Tim provides a wide breadth of experience, knowledge and perspective from his work with tribunals, in private practice and at arbitral institutions.</p>
+    <p>Based in The Hague and Hong Kong, Tim is qualified as a solicitor in England &amp; Wales, and called to the bars of New York and Ontario. He has acted as presiding, sole and co-arbitrator in arbitrations administered by the ICC, LCIA, HKIAC, SIAC, SCC, DIAC and KCAB, in addition to working on matters under the rules of other leading institutions, including ICSID, ICDR and JCAA, as well as numerous ad hoc proceedings under the UNCITRAL Rules.</p>
+    <p>Tim has a particular focus on efficiency in arbitration, and has written and spoken extensively on the subject. If you are interested in copies of any publications or would like to arrange a seminar or presentation, please get in touch.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Contact</h4>
+      <a class="email" href="mailto:tim@robbinsarbitration.com">tim@robbinsarbitration.com</a>
+    </div>
+    <div>
+      <h4>The Hague</h4>
+      <div class="addr">Jan Pieterszoon Coenstraat 7<br>The Hague, 2595 WP<br>The Netherlands<br>+31 6 2550 4785</div>
+    </div>
+    <div>
+      <h4>Hong Kong</h4>
+      <div class="addr">7/F, Low Block<br>Grand Millennium Plaza<br>181 Queen's Road Central<br>+852 5905 5668</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="brand-mark">
+      <img src="assets/logo.svg" alt="Robbins Arbitration mark">
+      <span>© 2026 Tim Robbins</span>
+    </div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/tim-robbins-15881610/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
