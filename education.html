@@ -39,6 +39,7 @@
     border:1px solid rgba(255,255,255,0.38); color:var(--ink-text); padding:10px 20px;
   }
   .masthead-nav-row .cv-btn:hover{ background:var(--red); border-color:var(--red); color:#FFFFFF; }
+  .menu-btn, .mobile-nav{ display:none; }
 
   .identity-band{ background:var(--white); border-bottom:1px solid var(--line); }
   .identity-row{ display:flex; align-items:center; gap:30px; padding:40px 0 38px; }
@@ -92,6 +93,28 @@
     .masthead-nav-row nav{ display:none; }
     .masthead-nav-row{ justify-content:flex-end; padding:16px 0; }
     .masthead-nav-row .cv-btn{ margin-left:0; }
+    .menu-btn{
+      display:flex; align-items:center; justify-content:center; flex-direction:column; gap:5px;
+      width:36px; height:36px; padding:0; background:none; border:none; cursor:pointer;
+    }
+    .menu-btn .bar{
+      display:block; width:22px; height:1.5px; background:var(--ink-text);
+      transition:transform 0.2s ease, opacity 0.2s ease;
+    }
+    .menu-btn.open .bar:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+    .menu-btn.open .bar:nth-child(2){ opacity:0; }
+    .menu-btn.open .bar:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+    .mobile-nav.open{
+      display:flex; flex-direction:column;
+      padding:8px 0 24px; border-top:1px solid var(--line-dark);
+    }
+    .mobile-nav a{
+      font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-text); opacity:0.85;
+      padding:14px 0; border-bottom:1px solid var(--line-dark);
+    }
+    .mobile-nav a:last-child{ border-bottom:none; }
+    .mobile-nav a:hover, .mobile-nav a:active{ opacity:1; color:#FFFFFF; }
+    .mobile-nav a.current{ opacity:1; color:#FFFFFF; }
     .identity-band .masthead-inner{ padding:0 22px; }
     .identity-row{ padding:28px 0 26px; gap:16px; }
     .identity-row img.logo-mark{ height:40px; }
@@ -118,7 +141,19 @@
         <a href="contact.html">Contact</a>
       </nav>
       <a class="cv-btn" href="assets/tim-robbins-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="education.html" class="current">Education &amp; Qualifications</a>
+      <a href="arbitration-experience.html">Arbitration Experience</a>
+      <a href="academic-professional.html">Academic &amp; Professional Activities</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
 </div>
 
@@ -244,5 +279,6 @@
   </div>
 </footer>
 
+<script src="assets/nav.js"></script>
 </body>
 </html>
